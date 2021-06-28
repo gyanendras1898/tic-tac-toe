@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background-color: #178bce;
+}
+:root {
+  --btn-size: 100px;
+  --mark-size: calc(var(--btn-size) * 0.9);
+}
+.container {
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+.btn {
+  width: var(--btn-size);
+  height: var(--btn-size);
+  cursor: pointer;
+  border: 3px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btn:hover {
+  background-color: gray;
+}
+.player0::before,
+.player0::after {
+  position: absolute;
+  content: "";
+  width: calc(var(--mark-size) * 0.15);
+  height: calc(var(--mark-size));
+  background-color: black;
+}
+.player0::before {
+  transform: rotate(45deg);
+}
+.player0::after {
+  transform: rotate(-45deg);
+}
+.player1::before,
+.player1::after {
+  position: absolute;
+  content: "";
+  width: calc(var(--mark-size));
+  height: calc(var(--mark-size));
+  border-radius: 50%;
+  background-color: black;
+}
+.player1::after {
+  position: absolute;
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
+}
