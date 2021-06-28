@@ -24,7 +24,6 @@ function clk(e) {
 function check(e) {
   winning.forEach((ele) => {
     if (ele.includes(e)) {
-      console.log(ele);
       if (
         gameBoard[ele[0]] == gameBoard[ele[1]] &&
         gameBoard[ele[0]] == gameBoard[ele[2]]
