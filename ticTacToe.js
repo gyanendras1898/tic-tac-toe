@@ -2,6 +2,16 @@ const btn = document.querySelectorAll(".btn");
 let player = 0;
 let flag = false;
 let gameBoard = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+const resetbtn = document.getElementById("reset");
+function reset() {
+  gameBoard = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+  player = 0;
+  flag = false;
+  btn.forEach((ele) => {
+    if (ele.classList[1] !== undefined) ele.classList.remove(ele.classList[1]);
+  });
+}
+
 const winning = [
   [0, 1, 2],
   [3, 4, 5],
@@ -30,8 +40,13 @@ function check(e) {
       ) {
         alert(`Congratulations! Player${(player % 2) + 1} wins`);
         flag = true;
+        reset();
       }
     }
   });
-  if (player == 8 && flag == false) alert("Draw");
+  if (player == 8 && flag == false) {
+    alert("Draw");
+    reset();
+  }
 }
+resetbtn.addEventListener("click", reset);

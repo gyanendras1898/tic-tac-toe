@@ -27,6 +27,12 @@ body {
   align-items: center;
   position: relative;
 }
+#reset {
+  width: var(--btn-size);
+  height: calc(var(--btn-size) * 0.5);
+  background-color: lightcoral;
+  margin-top: 3px;
+}
 .btn:hover {
   background-color: gray;
 }
